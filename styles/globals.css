@@ -28,4 +28,5 @@ a {
 p {
   width: 700px;
   text-align: justify;
+  border: 1px;
 }
