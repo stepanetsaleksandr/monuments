@@ -45,7 +45,7 @@ const HomeCard = (props) => {
           alt='img'
           sx={{
             opacity: "0.5",
-            filter: " blur(3px)",
+            filter: " blur(1px)",
             animation: `${fadeOut} 2s backwards`,
             "&:hover": {
               filter: " blur(0px)",

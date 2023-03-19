@@ -55,6 +55,7 @@ export default function Home() {
               backgroundColor: "transparent",
               padding: "30px",
               borderRadius: "10px",
+              variant: "fullWidth",
             }}
           >
             Памятники з граніту є популярним вибором для вічної памяті. Граніт -
