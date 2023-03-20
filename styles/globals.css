@@ -24,3 +24,9 @@ a {
     background: black;
   }
 }
+
+article {
+  text-align: justify;
+  line-height: 1.3rem;
+  font-size: 18px;
+}
