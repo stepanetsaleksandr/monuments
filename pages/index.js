@@ -1,8 +1,8 @@
 import Head from "next/head";
-import HomeCard from "../components/HomeCard";
-import Paper from "@mui/material/Paper";
-import Layout from "../components/Layout";
-import styles from "../styles/Home.module.css";
+import styles from "@/styles/Home.module.css";
+import Layout from "@/components/Layout";
+import HomeCard from "@/components/HomeCard";
+import { Paper } from "@mui/material";
 
 export default function Home() {
   return (

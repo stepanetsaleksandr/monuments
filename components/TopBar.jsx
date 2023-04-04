@@ -41,11 +41,9 @@ export default function HideAppBar(props) {
           <AppBar className={styles.appbar}>
             <Toolbar>
               <NextLink href='/' passHref>
-                <a>
-                  <Typography variant='h4' component='span'>
-                    Monuments
-                  </Typography>
-                </a>
+                <Typography variant='h4' component='span'>
+                  Monuments
+                </Typography>
               </NextLink>
             </Toolbar>
             <Toolbar>
@@ -66,44 +64,36 @@ export default function HideAppBar(props) {
                   passHref
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
-                  <a>
-                    <Typography variant='h6' component='nav'>
-                      Памятники
-                    </Typography>
-                  </a>
+                  <Typography variant='h6' component='nav'>
+                    Памятники
+                  </Typography>
                 </NextLink>
                 <NextLink
                   href='/stupeni'
                   passHref
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
-                  <a>
-                    <Typography variant='h6' component='nav'>
-                      Сходи
-                    </Typography>
-                  </a>
+                  <Typography variant='h6' component='nav'>
+                    Сходи
+                  </Typography>
                 </NextLink>
                 <NextLink
                   href='/brukivka'
                   passHref
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
-                  <a>
-                    <Typography variant='h6' component='nav'>
-                      Бруківка
-                    </Typography>
-                  </a>
+                  <Typography variant='h6' component='nav'>
+                    Бруківка
+                  </Typography>
                 </NextLink>
                 <NextLink
                   href='/vazy'
                   passHref
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
-                  <a>
-                    <Typography variant='h6' component='nav'>
-                      Вази
-                    </Typography>
-                  </a>
+                  <Typography variant='h6' component='nav'>
+                    Вази
+                  </Typography>
                 </NextLink>
               </Box>
             </Toolbar>
