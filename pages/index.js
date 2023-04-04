@@ -27,7 +27,7 @@ export default function Home() {
             img='/pamyatnik2.png'
             url='./pamyatnik'
             header='Памятники'
-            paragraph="Гранітні надгробні пам'ятники різної складності"
+            paragraph='Гранітні надгробні памятники різної складності'
           />
 
           <HomeCard
