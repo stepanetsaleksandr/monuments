@@ -5,8 +5,6 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Image from "next/image";
-import { URL } from "next/dist/compiled/@edge-runtime/primitives/url";
 import { keyframes } from "@emotion/react";
 
 const fadeIn = keyframes({

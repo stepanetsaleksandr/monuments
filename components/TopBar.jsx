@@ -8,7 +8,7 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
 import NextLink from "next/link";
 import styles from "../styles/TopBar.module.css";
-import { Box, Button, ButtonGroup } from "@mui/material";
+import { Box } from "@mui/material";
 
 const handleCloseNavMenu = () => {
   setAnchorElNav(null);
