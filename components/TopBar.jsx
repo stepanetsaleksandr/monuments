@@ -7,12 +7,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
 import NextLink from "next/link";
-import styles from "../styles/TopBar.module.css";
-import { Box } from "@mui/material";
 
-const handleCloseNavMenu = () => {
-  setAnchorElNav(null);
-};
+import { Box } from "@mui/material";
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -38,7 +34,13 @@ export default function HideAppBar(props) {
       <CssBaseline />
       <HideOnScroll {...props}>
         <header>
-          <AppBar className={styles.appbar}>
+          <AppBar
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              backgroundColor: "transparent",
+            }}
+          >
             <Toolbar>
               <NextLink href='/' passHref>
                 <Typography variant='h4' component='span'>
