@@ -38,7 +38,8 @@ export default function HideAppBar(props) {
             sx={{
               display: "flex",
               flexDirection: "row",
-              backgroundColor: "transparent",
+              justifyContent: "space-between",
+              backgroundColor: "rgba(50, 50, 50, 0.2)",
             }}
           >
             <Toolbar>
