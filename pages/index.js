@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import HomeCard from "../components/HomeCard";
 import Paper from "@mui/material/Paper";
 import Layout from "../components/Layout";
