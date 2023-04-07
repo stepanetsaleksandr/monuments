@@ -1,11 +1,13 @@
 .container {
-  padding: 0 0rem;
+  padding: 0;
+
   background: radial-gradient(white, lightslategray);
 }
 
 .main {
   min-height: 92vh;
   padding: 4rem 0;
+  margin: 0;
   flex: 1;
   display: flex;
   flex-direction: column;

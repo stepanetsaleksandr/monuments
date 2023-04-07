@@ -49,16 +49,25 @@ export default function HideAppBar(props) {
                 </Typography>
               </NextLink>
             </Toolbar>
-            <Toolbar>
+            <Toolbar
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                "& > *": {
+                  m: 1,
+                },
+                "@media (max-width: 960px)": {
+                  display: "none",
+                },
+              }}
+            >
               <Box
                 sx={{
                   flexGrow: 1,
                   display: { xs: "none", md: "flex" },
-                  display: "flex",
-
                   alignItems: "center",
-                  "& > *": {
-                    m: 1,
+                  "@media (max-width: 960px)": {
+                    display: "none",
                   },
                 }}
               >
