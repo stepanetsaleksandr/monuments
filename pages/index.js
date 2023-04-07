@@ -60,6 +60,12 @@ export default function Home() {
             header='Художні роботи'
             paragraph='Витвори мистецтва з каменю: Портрети, відтворені в граніті'
           />
+          <HomeCard
+            img='/brukivka.jpg'
+            url='./products'
+            header='Товари'
+            paragraph='Товари'
+          />
 
           <Paper
             elevation={3}
