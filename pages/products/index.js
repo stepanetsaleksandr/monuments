@@ -1,6 +1,12 @@
 import Head from "next/head";
 
-function ProductListPage({ products }) {
+const products = [
+  { id: 1, name: "Товар 1" },
+  { id: 2, name: "Товар 2" },
+  { id: 3, name: "Товар 3" },
+];
+
+function ProductListPage() {
   const schemaOrg = {
     "@context": "http://schema.org",
     "@type": "ItemList",
