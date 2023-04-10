@@ -63,12 +63,14 @@ export default function HideAppBar(props) {
             >
               <Box
                 sx={{
+                  width: "350px",
                   flexGrow: 1,
                   display: { xs: "none", md: "flex" },
                   alignItems: "center",
                   "@media (max-width: 960px)": {
                     display: "none",
                   },
+                  justifyContent: "space-between",
                 }}
               >
                 <NextLink

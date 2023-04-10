@@ -1,104 +1,79 @@
 import React from "react";
 import { Grid, Card, CardMedia, CardContent, Typography } from "@mui/material";
-
-const products = [
-  {
-    id: 1,
-    name: "Product 1",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "https://picsum.photos/id/237/200/300",
-    price: "$10",
-  },
-  {
-    id: 2,
-    name: "Product 2",
-    description: "Praesent et lectus in nunc fringilla condimentum.",
-    image: "https://picsum.photos/id/238/200/300",
-    price: "$15",
-  },
-  {
-    id: 3,
-    name: "Product 3",
-    description: "Praesent et lectus in nunc fringilla condimentum.",
-    image: "https://picsum.photos/id/239/200/300",
-    price: "$20",
-  },
-  {
-    id: 4,
-    name: "Product 1",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "https://picsum.photos/id/237/200/300",
-    price: "$10",
-  },
-  {
-    id: 5,
-    name: "Product 2",
-    description: "Praesent et lectus in nunc fringilla condimentum.",
-    image: "https://picsum.photos/id/238/200/300",
-    price: "$15",
-  },
-  {
-    id: 6,
-    name: "Product 1",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "https://picsum.photos/id/237/200/300",
-    price: "$10",
-  },
-  {
-    id: 7,
-    name: "Product 2",
-    description: "Praesent et lectus in nunc fringilla condimentum.",
-    image: "https://picsum.photos/id/238/200/300",
-    price: "$15",
-  },
-  {
-    id: 8,
-    name: "Product 1",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "https://picsum.photos/id/237/200/300",
-    price: "$10",
-  },
-  {
-    id: 9,
-    name: "Product 2",
-    description: "Praesent et lectus in nunc fringilla condimentum.",
-    image: "https://picsum.photos/id/238/200/300",
-    price: "$15",
-  },
-];
+import { keyframes } from "@emotion/react";
+const fadeIn = keyframes({
+  from: { opacity: 0.8, height: 250 },
+  to: { opacity: 1, height: 350 },
+});
+const fadeInCard = keyframes({
+  from: { opacity: 0.8, height: 550, width: 280 },
+  to: { opacity: 1, height: 750, width: 300 },
+});
+const fadeOut = keyframes({
+  from: { opacity: 1, height: 350 },
+  to: { opacity: 0.8, height: 250 },
+});
 
 const ProductCard = ({ product }) => {
   return (
     <Card
-      sx={{ maxWidth: 345, height: 500, marginLeft: "15px", borderRadius: 3 }}
+      sx={{
+        maxWidth: 280,
+        maxHeight: 600,
+        width: 280,
+        height: 550,
+        margin: "0.5rem ",
+        textAlign: "left",
+        textDecoration: "none",
+        border: "1px solid #eaeaea",
+        borderRadius: "10px",
+        transition: "color 0.15s ease, border-color 0.15s ease",
+        backgroundColor: "transparent",
+        "&:hover": {
+          filter: " blur(0px)",
+          animation: `${fadeInCard} 1s forwards`,
+          height: 550,
+          opacity: "1",
+        },
+      }}
     >
       <CardMedia
         component='img'
-        height='350'
-        width='300'
-        image={product.image}
-        alt={product.name}
+        height='250'
+        image={product.fields.image.fields.file.url}
+        alt={product.fields.name}
+        sx={{
+          opacity: "0.5",
+          filter: " blur(0px)",
+          animation: `${fadeOut} 2s forwards`,
+          "&:hover": {
+            filter: " blur(0px)",
+            animation: `${fadeIn} 1s forwards`,
+            height: 250,
+            opacity: "1",
+          },
+        }}
       />
       <CardContent>
         <Typography gutterBottom variant='h5' component='div'>
-          {product.name}
+          {product.fields.name}
         </Typography>
         <Typography variant='body2' color='text.secondary'>
-          {product.description}
+          {product.fields.description}
         </Typography>
         <Typography variant='h6' color='text.primary'>
-          {product.price}
+          Ціна: {product.fields.price} грн.
         </Typography>
       </CardContent>
     </Card>
   );
 };
 
-const ProductGallery = () => {
+const ProductGallery = ({ products }) => {
   return (
     <Grid container spacing={3}>
       {products.map((product) => (
-        <Grid item key={product.id} xs={12} sm={6} md={5} lg={4}>
+        <Grid item key={product.fields.id} xs={12} sm={6} md={5} lg={4}>
           <ProductCard product={product} />
         </Grid>
       ))}

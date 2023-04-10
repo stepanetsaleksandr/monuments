@@ -3,8 +3,26 @@ import styles from "../../styles/Home.module.css";
 import ProductCard from "../../components/MyGallery";
 import Layout from "../../components/Layout";
 import Paper from "@mui/material/Paper";
+import { createClient } from "contentful";
+import Image from "next/image";
 
-const index = () => {
+const client = createClient({
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+});
+
+export async function getStaticProps() {
+  const entries = await client.getEntries({ content_type: "pamyatnik" });
+  console.log(entries);
+  return {
+    props: {
+      entries: entries.items,
+    },
+    revalidate: 60, // refresh the data every 60 seconds
+  };
+}
+
+const index = ({ entries }) => {
   return (
     <div className={styles.container}>
       <Layout>
@@ -18,7 +36,7 @@ const index = () => {
                 justifyContent: "center",
               }}
             >
-              <ProductCard />
+              <ProductCard products={entries} />
             </div>
           </div>
           <Paper

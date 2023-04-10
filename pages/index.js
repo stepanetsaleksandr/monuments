@@ -3,8 +3,25 @@ import styles from "@/styles/Home.module.css";
 import Layout from "@/components/Layout";
 import HomeCard from "@/components/HomeCard";
 import { Paper } from "@mui/material";
+import { createClient } from "contentful";
 
-export default function Home() {
+const client = createClient({
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+});
+
+export async function getStaticProps() {
+  const entries = await client.getEntries({ content_type: "product" });
+
+  return {
+    props: {
+      entries: entries.items,
+    },
+    revalidate: 60, // refresh the data every 60 seconds
+  };
+}
+
+export default function Home({ entries }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -21,6 +38,7 @@ export default function Home() {
         <p className={styles.description}>
           вироби з натурального граніту <br />
         </p>
+
         <div className={styles.grid}>
           <HomeCard
             img='/pamyatnik2.png'
