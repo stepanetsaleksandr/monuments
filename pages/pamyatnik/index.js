@@ -14,7 +14,6 @@ const client = createClient({
 
 export async function getStaticProps() {
   const entries = await client.getEntries({ content_type: "pamyatnik" });
-  console.log(entries);
   return {
     props: {
       entries: entries.items,
