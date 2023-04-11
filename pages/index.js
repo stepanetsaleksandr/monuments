@@ -6,8 +6,8 @@ import { Paper } from "@mui/material";
 import { createClient } from "contentful";
 
 const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  space: "xvbok1avtt52",
+  accessToken: "UM8g65iOzEsCgTXAPSBUm0UpbN9v7IY6fXIs8DVQbeM",
 });
 
 export async function getStaticProps() {
