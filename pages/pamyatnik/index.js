@@ -23,7 +23,7 @@ export async function getStaticProps() {
   };
 }
 
-const index = ({ entries }) => {
+const Index = ({ entries }) => {
   const [selectedCategory, setSelectedCategory] = useState("Одинарні");
 
   const handleCategoryChange = (event, newCategory) => {
@@ -121,4 +121,4 @@ const index = ({ entries }) => {
   );
 };
 
-export default index;
+export default Index;
