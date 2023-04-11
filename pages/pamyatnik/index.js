@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from "react";
+import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import styles from "../../styles/Home.module.css";
 import ProductCard from "../../components/MyGallery";
 import Layout from "../../components/Layout";
@@ -22,6 +24,14 @@ export async function getStaticProps() {
 }
 
 const index = ({ entries }) => {
+  const [selectedCategory, setSelectedCategory] = useState("Одинарні");
+
+  const handleCategoryChange = (event, newCategory) => {
+    if (newCategory !== null) {
+      setSelectedCategory(newCategory);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Layout>
@@ -35,7 +45,25 @@ const index = ({ entries }) => {
                 justifyContent: "center",
               }}
             >
-              <ProductCard products={entries} />
+              <ToggleButtonGroup
+                value={selectedCategory}
+                exclusive
+                onChange={handleCategoryChange}
+                aria-label='category'
+                sx={{ display: "flex", justifyContent: "center" }}
+              >
+                <ToggleButton value='Одинарні'>Одинарні</ToggleButton>
+                <ToggleButton value='Подвійні'>Подвійні</ToggleButton>
+                <ToggleButton value='Комплекси'>Комплекси</ToggleButton>
+                <ToggleButton value='Дитячі'>Дитячі</ToggleButton>
+                <ToggleButton value='Ексклюзивні'>Ексклюзивні</ToggleButton>
+                <ToggleButton value='Хрести'>Хрести</ToggleButton>
+              </ToggleButtonGroup>
+
+              <ProductCard
+                products={entries}
+                selectedCategory={selectedCategory}
+              />
             </div>
           </div>
           <Paper

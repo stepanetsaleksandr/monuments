@@ -1,5 +1,15 @@
 import React from "react";
-import { Grid, Card, CardMedia, CardContent, Typography } from "@mui/material";
+
+import {
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  CardActions,
+  Button,
+  CardHeader,
+} from "@mui/material";
 import { keyframes } from "@emotion/react";
 const fadeIn = keyframes({
   from: { opacity: 0.8, height: 250 },
@@ -37,6 +47,18 @@ const ProductCard = ({ product }) => {
         },
       }}
     >
+      <CardHeader
+        title={
+          <Typography variant='h6' color='textSecondary'>
+            Проект №: {product.fields.id}
+          </Typography>
+        }
+        subheader={
+          <Typography variant='subtitle5' color='textSecondary' gutterBottom>
+            Категорія: {product.fields.category}
+          </Typography>
+        }
+      />
       <CardMedia
         component='img'
         height='250'
@@ -55,9 +77,6 @@ const ProductCard = ({ product }) => {
         }}
       />
       <CardContent>
-        <Typography gutterBottom variant='h5' component='div'>
-          {product.fields.name}
-        </Typography>
         <Typography variant='body2' color='text.secondary'>
           {product.fields.description}
         </Typography>
@@ -65,14 +84,23 @@ const ProductCard = ({ product }) => {
           Ціна: {product.fields.price} грн.
         </Typography>
       </CardContent>
+      <CardActions>
+        <Button size='small' color='primary'>
+          Share
+        </Button>
+      </CardActions>
     </Card>
   );
 };
 
-const ProductGallery = ({ products }) => {
+const ProductGallery = ({ products, selectedCategory }) => {
+  const filteredProducts = selectedCategory
+    ? products.filter((product) => product.fields.category === selectedCategory)
+    : products;
+
   return (
     <Grid container spacing={3}>
-      {products.map((product) => (
+      {filteredProducts.map((product) => (
         <Grid item key={product.fields.id} xs={12} sm={6} md={5} lg={4}>
           <ProductCard product={product} />
         </Grid>
