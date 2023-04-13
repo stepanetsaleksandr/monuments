@@ -1,0 +1,9 @@
+.productCard {
+  width: calc(50% - 16px);
+}
+
+@media (max-width: 600px) {
+  .productCard {
+    width: 100%;
+  }
+}

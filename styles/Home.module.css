@@ -1,6 +1,9 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 0;
-
   background: radial-gradient(white, lightslategray);
 }
 
@@ -15,7 +18,7 @@
   align-items: center;
 }
 
-.footer {
+/* .footer {
   display: flex;
   flex: 1;
   height: 85px;
@@ -30,7 +33,7 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-}
+} */
 
 .title a {
   color: #0070f3;
@@ -45,6 +48,7 @@
 
 .title {
   margin: 0;
+  margin-top: 50px;
   line-height: 1.15;
   font-family: "Ubuntu", sans-serif;
   font-size: 4rem;
@@ -62,14 +66,14 @@
   font-size: 1.2rem;
 }
 
-.code {
+/* .code {
   background: #fafafa;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
-}
+} */
 
 .grid {
   display: flex;
@@ -79,7 +83,7 @@
   max-width: 900px;
 }
 
-.card {
+/* .card {
   margin: 0.5rem;
   padding: 1.5rem;
   text-align: left;
@@ -92,9 +96,9 @@
   background-color: transparent;
   background-size: 100%;
   background-repeat: no-repeat;
-}
+} */
 
-.card:hover,
+/* .card:hover,
 .card:focus,
 .card:active {
   color: darkgoldenrod;
@@ -110,12 +114,12 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
-}
+} */
 
-.logo {
+/* .logo {
   height: 1em;
   margin-left: 0.5rem;
-}
+} */
 
 @media (max-width: 600px) {
   .grid {

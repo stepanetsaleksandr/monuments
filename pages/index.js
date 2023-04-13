@@ -1,29 +1,12 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import Layout from "@/components/Layout";
 import HomeCard from "@/components/HomeCard";
 import { Paper } from "@mui/material";
-import { createClient } from "contentful";
-
-const client = createClient({
-  space: "xvbok1avtt52",
-  accessToken: "UM8g65iOzEsCgTXAPSBUm0UpbN9v7IY6fXIs8DVQbeM",
-});
-
-export async function getStaticProps() {
-  const entries = await client.getEntries({ content_type: "product" });
-
-  return {
-    props: {
-      entries: entries.items,
-    },
-    revalidate: 60, // refresh the data every 60 seconds
-  };
-}
+import Layout from "../components/Layout";
 
 export default function Home({ entries }) {
   return (
-    <div className={styles.container}>
+    <Layout>
       <Head>
         <title>monuments</title>
         <meta
@@ -32,8 +15,7 @@ export default function Home({ entries }) {
         />
         <link rel='icon' href='/icon.png' />
       </Head>
-
-      <Layout>
+      <div>
         <h1 className={styles.title}>Monuments</h1>
         <p className={styles.description}>
           вироби з натурального граніту <br />
@@ -145,7 +127,7 @@ export default function Home({ entries }) {
             </article>
           </Paper>
         </div>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 }

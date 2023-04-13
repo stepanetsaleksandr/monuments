@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head />
-
       <script
         async
         src='https://www.googletagmanager.com/gtag/js?id=G-3576WVWP1P'
