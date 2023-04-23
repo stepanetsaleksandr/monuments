@@ -20,6 +20,25 @@ export default function Document() {
           `,
         }}
       ></script>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: `{
+            "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": {product.fields.name},
+    "image": {product.fields.image.fields.file.url},
+    "description": {product.fields.description},
+    "sku": {product.fields.id},
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "UAH",
+      "price": {product.fields.price},
+      "availability": "https://schema.org/InStock"
+    }
+              }`,
+        }}
+      />
       <body>
         <Main />
         <NextScript />

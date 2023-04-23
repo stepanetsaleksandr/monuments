@@ -50,65 +50,66 @@ export default function Product({ name, description, price, category, image }) {
   return (
     <Layout>
       <main className={styles.main}>
-        <Card
-          sx={{
-            maxWidth: 600,
-            width: 600,
-            margin: "1rem ",
-            textAlign: "left",
-            textDecoration: "none",
-            border: "1px solid #eaeaea",
-            borderRadius: "10px",
-            transition: "color 0.15s ease, border-color 0.15s ease",
-            backgroundColor: "transparent",
-            "&:hover": {
-              filter: " blur(0px)",
-              opacity: "1",
-            },
-          }}
-        >
-          <CardHeader
-            title={
-              <Typography variant='h6' color='textSecondary'>
-                Проект №: {name}
-              </Typography>
-            }
-            subheader={
-              <Typography variant='text' color='textSecondary' gutterBottom>
-                Категорія: {category}
-              </Typography>
-            }
-          />
-          <CardMedia
-            component='img'
-            height='600'
-            image={image.fields.file.url}
-            alt={name}
+        <div className={styles.grid}>
+          <Card
             sx={{
-              opacity: "0.8",
-              filter: " blur(0px)",
-
+              maxWidth: 600,
+              width: "100%",
+              textAlign: "left",
+              textDecoration: "none",
+              border: "1px solid #eaeaea",
+              borderRadius: "10px",
+              transition: "color 0.15s ease, border-color 0.15s ease",
+              backgroundColor: "transparent",
               "&:hover": {
                 filter: " blur(0px)",
-
                 opacity: "1",
               },
             }}
-          />
-          <CardContent>
-            <Typography
-              variant='body2'
-              color='text.secondary'
-              component='div'
-            ></Typography>
-            <Typography variant='h6' color='text.primary'>
-              Ціна: {price} грн.
-            </Typography>
-            <Typography variant='h6' color='text.primary'>
-              {description}
-            </Typography>
-          </CardContent>
-        </Card>
+          >
+            <CardHeader
+              title={
+                <Typography variant='h6' color='textSecondary'>
+                  Проект №: {name}
+                </Typography>
+              }
+              subheader={
+                <Typography variant='text' color='textSecondary' gutterBottom>
+                  Категорія: {category}
+                </Typography>
+              }
+            />
+            <CardMedia
+              component='img'
+              height='600'
+              image={image.fields.file.url}
+              alt={name}
+              sx={{
+                opacity: "0.8",
+                filter: " blur(0px)",
+
+                "&:hover": {
+                  filter: " blur(0px)",
+
+                  opacity: "1",
+                },
+              }}
+            />
+            <CardContent>
+              <Typography
+                variant='body2'
+                color='text.secondary'
+                component='div'
+              ></Typography>
+              <Typography variant='h6' color='text.primary'>
+                Ціна: {price} грн.
+              </Typography>
+              <Typography variant='h6' color='text.primary'>
+                {description}
+              </Typography>
+            </CardContent>
+          </Card>
+        </div>
       </main>
     </Layout>
   );

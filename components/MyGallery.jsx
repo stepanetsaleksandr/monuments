@@ -39,10 +39,9 @@ const ProductCard = ({ product }) => {
   return (
     <Card
       sx={{
-        maxWidth: 280,
+        maxWidth: 300,
         width: 300,
-        margin: "1rem ",
-        textAlign: "left",
+        textAlign: "center",
         textDecoration: "none",
         border: "1px solid #eaeaea",
         borderRadius: "10px",
@@ -73,6 +72,7 @@ const ProductCard = ({ product }) => {
           height='250'
           image={product.fields.image.fields.file.url}
           alt={product.fields.name}
+          title={product.fields.name}
           sx={{
             opacity: "0.8",
             filter: " blur(0px)",
@@ -146,9 +146,9 @@ const ProductGallery = ({ products, selectedCategory }) => {
 
   const sortedProducts = filteredProducts.sort((a, b) => {
     if (sortBy === "price") {
-      return sortOrder === "asc"
-        ? a.fields.price - b.fields.price
-        : b.fields.price - a.fields.price;
+      const priceA = parseFloat(a.fields.price);
+      const priceB = parseFloat(b.fields.price);
+      return sortOrder === "asc" ? priceA - priceB : priceB - priceA;
     } else {
       return sortOrder === "asc"
         ? a.fields.name.localeCompare(b.fields.name)

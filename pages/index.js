@@ -4,6 +4,45 @@ import HomeCard from "@/components/HomeCard";
 import { Paper } from "@mui/material";
 import Layout from "../components/Layout";
 
+const products = [
+  {
+    img: "/pamyatnik2.webp",
+    url: "./pamyatnik",
+    header: "Памятники",
+    paragraph: "Гранітні надгробні памятники різної складності",
+  },
+  {
+    img: "/stupeni.png",
+    url: "./stupeni",
+    header: "Сходи з граніту",
+    paragraph: "Гранітні сходи - матеріал з найкращими властивостями",
+  },
+  {
+    img: "/vaza.webp",
+    url: "./vazy",
+    header: "Вази з граніту",
+    paragraph: "гранітні вази - красиве та функціональне доповнення дизайну",
+  },
+  {
+    img: "/brukivka.webp",
+    url: "./brukivka",
+    header: "Гранітна бруківка",
+    paragraph: "Бруківка з натурального каменю - гарне і надійне покриття",
+  },
+  {
+    img: "/brukivka.webp",
+    url: "./brukivka",
+    header: "Гранітна бруківка",
+    paragraph: "Бруківка з натурального каменю - гарне і надійне покриття",
+  },
+  {
+    img: "/potret.webp",
+    url: "./brukivka",
+    header: "Художні роботи",
+    paragraph: "Витвори мистецтва з каменю: Портрети, відтворені в граніті",
+  },
+];
+
 export default function Home({ entries }) {
   return (
     <Layout>
@@ -22,50 +61,15 @@ export default function Home({ entries }) {
         </p>
 
         <div className={styles.grid}>
-          <HomeCard
-            img='/pamyatnik2.png'
-            url='./pamyatnik'
-            header='Памятники'
-            paragraph='Гранітні надгробні памятники різної складності'
-          />
-
-          <HomeCard
-            img='/stupeni.png'
-            url='./stupeni'
-            header='Сходи з граніту'
-            paragraph='Гранітні сходи - матеріал з найкращими властивостями'
-          />
-
-          <HomeCard
-            img='/vaza.jpg'
-            url='./vazy'
-            header='Вази з граніту'
-            paragraph='гранітні вази - красиве та функціональне доповнення дизайну'
-          />
-          <HomeCard
-            img='/brukivka.jpg'
-            url='./brukivka'
-            header='Гранітна бруківка'
-            paragraph='Бруківка з натурального каменю - гарне і надійне покриття'
-          />
-          <HomeCard
-            img='/brukivka.jpg'
-            url='./brukivka'
-            header='Гранітна бруківка'
-            paragraph='Бруківка з натурального каменю - гарне і надійне покриття'
-          />
-          <HomeCard
-            img='/potret.jpg'
-            url='./brukivka'
-            header='Художні роботи'
-            paragraph='Витвори мистецтва з каменю: Портрети, відтворені в граніті'
-          />
-          <HomeCard
-            img='/brukivka.jpg'
-            url='./products'
-            header='Товари'
-            paragraph='Товари'
-          />
+          {products.map((product, index) => (
+            <HomeCard
+              key={index}
+              img={product.img}
+              url={product.url}
+              header={product.header}
+              paragraph={product.paragraph}
+            />
+          ))}
 
           <Paper
             elevation={3}

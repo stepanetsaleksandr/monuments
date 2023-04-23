@@ -8,12 +8,12 @@ import Typography from "@mui/material/Typography";
 import { keyframes } from "@emotion/react";
 
 const fadeIn = keyframes({
-  from: { opacity: 0.5, height: 200 },
+  from: { opacity: 0.7, height: 200 },
   to: { opacity: 1, height: 250 },
 });
 const fadeOut = keyframes({
   from: { opacity: 1, height: 250 },
-  to: { opacity: 0.5, height: 200 },
+  to: { opacity: 0.7, height: 200 },
 });
 
 const HomeCard = (props) => {
@@ -42,8 +42,8 @@ const HomeCard = (props) => {
           image={props.img}
           alt='img'
           sx={{
-            opacity: "0.5",
-            filter: " blur(1px)",
+            opacity: "0.7",
+            filter: " blur(0px)",
             animation: `${fadeOut} 2s backwards`,
             "&:hover": {
               filter: " blur(0px)",
