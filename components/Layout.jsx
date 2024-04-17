@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import NextLink from "next/link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Slide, useScrollTrigger } from "@mui/material";
+import { Analytics } from "@vercel/analytics/react";
 
 const theme = createTheme({
   palette: {
@@ -31,6 +32,7 @@ function HideOnScroll(props) {
   return (
     <Slide appear={false} direction='down' in={!trigger}>
       {children}
+      <Analytics />
     </Slide>
   );
 }
